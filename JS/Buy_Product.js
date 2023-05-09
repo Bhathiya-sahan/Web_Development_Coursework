@@ -9,7 +9,6 @@ var price4=0;
 var price5=0;
 var price6=0;
 var quantity;
-const total=[];
 var quantityArray =[];
 var productArray =[];
 var priceArray =[];
@@ -34,7 +33,10 @@ function addtocart_1(){
   quantity =document.getElementById("product1").value;
   document.getElementById("cart_data1").textContent="Project Shadow          "+quantity+" =  "+quantity*1000.00;
   price1 =quantity*1000.00;
-  
+  var Total=document.getElementById("total-price");
+  var Total1=parseFloat(Total.innerHTML);
+  var newTotal = Total1 +  parseFloat(price1);
+  Total.innerHTML=newTotal;
 }
 
 
@@ -50,7 +52,12 @@ function close2(){
 function addtocart_2(){
   quantity =document.getElementById("product2").value;
   document.getElementById("cart_data2").textContent="UNREAL T-Shirt          "+quantity+" =  "+quantity*2000.00;
-  total.push(quantity*2000.00);
+  price2 =quantity*2000.00;
+  var Total=document.getElementById("total-price");
+  var Total1=parseFloat(Total.innerHTML);
+  var newTotal = Total1 +  parseFloat(price2);
+  Total.innerHTML=newTotal;
+
 }
 
 
@@ -65,7 +72,11 @@ function close3(){
 function addtocart_3(){
   quantity =document.getElementById("product3").value;
   document.getElementById("cart_data3").textContent="UNREAL Hoodie           "+quantity+" =  "+quantity*3000.00;
-  total.push(quantity*3000.00);
+  price3 =quantity*3000.00;
+  var Total=document.getElementById("total-price");
+  var Total1=parseFloat(Total.innerHTML);
+  var newTotal = Total1 +  parseFloat(price3);
+  Total.innerHTML=newTotal;
 }
 
 
@@ -81,7 +92,11 @@ function close4(){
 function addtocart_4(){
   quantity =document.getElementById("product4").value;
   document.getElementById("cart_data4").textContent="Invisible Dimesion File "+quantity+" =  "+quantity*900.00;
-  total.push(quantity*900.00);
+  price4 =quantity*900.00;
+  var Total=document.getElementById("total-price");
+  var Total1=parseFloat(Total.innerHTML);
+  var newTotal = Total1 +  parseFloat(price4);
+  Total.innerHTML=newTotal;
 }
 
 
@@ -97,7 +112,11 @@ function close5(){
 function addtocart_5(){
   quantity =document.getElementById("product5").value;
   document.getElementById("cart_data5").textContent="UNREAL Cap              "+quantity+" =  "+quantity*400.00;
-  total.push(quantity*400.00);
+  price5 =quantity*400.00;
+  var Total=document.getElementById("total-price");
+  var Total1=parseFloat(Total.innerHTML);
+  var newTotal = Total1 +  parseFloat(price5);
+  Total.innerHTML=newTotal;
 }
 
 
@@ -116,18 +135,13 @@ function close6(){
 function addtocart_6(){
   quantity =document.getElementById("product6").value;
   document.getElementById("cart_data6").textContent="UNREAL Watch            "+quantity+" =  "+quantity*3500.00;
-  if(quantity==0){
-    price6=0;
-  }
-  else{ price6=quantity*3500.00;
-    return price6;
-  }
+  price6 =quantity*3500.00;
+  var Total=document.getElementById("total-price");
+  var Total1=parseFloat(Total.innerHTML);
+  var newTotal = Total1 +  parseFloat(price6);
+  Total.innerHTML=newTotal;
  
 }
-var last_total=price6+price2;
-
-  document.getElementById("total-price").textContent=last_total;
-  console.log( last_total);
 
 
 
@@ -159,17 +173,7 @@ var totalPrice=0;
     const para = document.getElementById('cart_data').textContent;
     para.textContent = join("\nYour order summary : \n" + alertMessage.join("\n") + "\nYour total is Rs " + totalPrice.toString() + "\nThank you for shopping with Taprobane online store.\nYour products will be delivered within soon.");
 	}
-  /*var value2;
 
-  function test(){
-    value2=document.getElementById("product6").value;
-    document.getElementById("cart-data").textContent=("UNREAL Watch "+value2+" = "+value2 *3500);
-    /*display("cart-data","UNREAL Watch "+value2+" = "+value2 *3500);
-  }
-  function display(id,text){
-    document.getElementById(id).textContent=text;
-  
-  }*/
 
 
 window.onscroll = function() {myFunction()};
